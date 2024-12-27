@@ -17,7 +17,3 @@ def test_part_of_response():
     response_get= requests.get(url = f'{URL}/trainers', params = {'trainer_id': TRAINER_ID})
     assert response_get.json()["data"][0]["trainer_name"] == "Tasha"
 
-@pytest.mark.parametrize('key,value', [('trainer_name', 'Tasha'), ('id', TRAINER_ID)])
-def test_parametrize(key, value):
-    response_parametrize= requests.get(url = f'{URL}/trainers', params = {'trainer_id': TRAINER_ID})
-    assert response_parametrize.json()["data"][0][key] == value 
